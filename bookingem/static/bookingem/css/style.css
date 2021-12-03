@@ -1,0 +1,13 @@
+.origin {
+    background: linear-gradient(to right, #F6EFD2, #CEAD78);
+    text-align: center
+}
+.detailbook {
+    background: linear-gradient(to right, #F6EFD2, #CEAD78);
+    text-align: center
+}
+.detailbook h2 {
+    height: 50px;
+    margin-top: 150px;
+    margin: 50px;
+}

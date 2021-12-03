@@ -1,0 +1,10 @@
+{% extends 'book/origin.html' %}
+
+{% block title %}Book{% endblock %}
+
+{% block content %}
+<form action="." method="POST">{% csrf_token %}
+    <h1>Delete this book?"{{ object.title }}"</h1>
+    <p><input type="submit" value="Yes"> <a href="../">Cancel</a></p>
+</form>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'book/origin.html' %}
+{% load static %}
+
+{% block title %}Book:{% endblock %}
+
+{% block content %}
+
+<div class="detailbook">
+    <h2>{{ object.title }}</h2>
+    <center>{{ object.description }}</center>
+    <br><br><br><br>
+
+
+    <form action="comment/" method="POST">
+            {% csrf_token %}
+            <label>
+                Comment:
+                <input name="text" type="text">
+            </label>
+
+            <input value="Оставьте свой коментарий" type="submit">
+    </form>
+
+
+    {% for comment in comments %}
+        <h5>{{ comment.text }}</h5>
+    {% endfor %}
+
+    <h2><a href="/{{ object.pk }}/update">Update?</a></h2>
+    <h2><a href="/{{ object.pk }}/delete">Delete?</a></h2>
+
+
+
+</div>
+{% endblock %}
