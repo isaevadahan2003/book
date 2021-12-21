@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anime</title>
+</head>
+<body>
+<ul>
+    {% for i in object_list %}
+    <li>
+        <h2>{{ i.title }}</h2>
+        <img class="anime-image" src="{{ i.description.url }}" alt="">
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>
