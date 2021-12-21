@@ -57,18 +57,7 @@ def create_comment_view(request: HttpRequest, id):
             return redirect("/")
         else:
             return HttpResponse("Empty field!!!")
-# class CommentCreate(CreateView):
-#     model = Comment
-#     template_name = "book/book_detail.html"
-#     extra_context = {"comment": forms.CommentForm}
 #
-#     def get_context_data(self, **kwargs):   # передача формы
-#         context = super(CommentCreate, self).get_context_data(**kwargs)
-#         context["comment"] = CommentForm()
-#         return context
-#
-#     def get_success_url(self):
-#         return redirect, reverse_lazy("book-detail", kwargs={"pk": self.get_object().id})
 
 class BookUpdateView(UpdateView):
     template_name = "book/book_create.html"
@@ -83,7 +72,6 @@ class BookUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse("book:book-list")
-
 
 class BookDeleteView(DeleteView):
     template_name = "book/book_delete.html"
